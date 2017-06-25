@@ -48,11 +48,11 @@ def main():
     for x in range(1, 2):
         getLinks("http://www.subito.it/annunci-lazio/vendita/offerte-lavoro/roma/roma/?q=sistemista&o="+ str(x))
 
-    print(data)
-    print(links)
-    print(luogo)
-    print(descrizione)
-    print(inserzionista)
+    # print(data)
+    # print(links)
+    # print(luogo)
+    # print(descrizione)
+    # print(inserzionista)
 
     ris = zip(reversed(data),  reversed(links), reversed(luogo), reversed(descrizione), reversed(inserzionista),)
 
