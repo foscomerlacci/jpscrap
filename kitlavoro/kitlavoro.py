@@ -19,7 +19,7 @@ def main():
     data = []  #
     inserzionista = []  #
     luogo = []  #
-    conn = sqlite3.connect('../test.sqlite')  # creo la connessione al db sqlite
+    conn = sqlite3.connect('test.sqlite')  # creo la connessione al db sqlite
     c = conn.cursor()  # creo il puntatore della connessione
     inizio = time.time()  # creo il momento 0 per calcolare il tempo di esecuzione
     rx = re.compile("^http://www.kitlavoro.it/search/sistemista+roma")  # creo la reg exp per filtrare i links giusti

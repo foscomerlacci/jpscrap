@@ -15,7 +15,7 @@ def main():
     data = []                                               #
     luogo = []
     inserzionista = []                                                 #
-    conn = sqlite3.connect('../test.sqlite')                   # creo la connessione al db sqlite
+    conn = sqlite3.connect('test.sqlite')                   # creo la connessione al db sqlite
     c = conn.cursor()                                       # creo il puntatore
     inizio = time.time()                                    # creo il momento 0 per calcolare il tempo di esecuzione
 
