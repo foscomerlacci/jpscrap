@@ -68,5 +68,6 @@ def main():
         x = " "
     print("Il job ha impiegato " + str(round((fine - inizio), 2)) + " secondi per inserire " + str(t_inseriti) + " annunci" + str(x) )  # stampo il tempo di esecuzione del job di web scraping
     print("evvivaaaaaaaaaaaaaaaaaaaa!!!!!!!!")
+    print("\n")
 
 if __name__ == '__main__': main()
