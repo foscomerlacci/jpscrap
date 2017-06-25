@@ -59,19 +59,25 @@ def main():
     for r in ris:
         c.execute('''SELECT link FROM annunci''')
         elenco = str(c.fetchall())
-
+        t_inseriti = 0
         if r[1] in elenco:                  # qui verifico che l'annuncio non sia gia' stato salvato
             print("record gia' inserito")
         else:
 
             c.execute('''INSERT INTO annunci(data, link, luogo, descrizione, inserzionista, timestamp) VALUES(?,?,?,?,?,?)''',(r[0], r[1], r[2], r[3], r[4], str(datetime.now())))
             print(str(r[0])+" -- "+ r[1]+" -- "+ str(r[2])+" -- "+ str(r[3])+"--"+ str(r[4])+"--")
+            t_inseriti = t_inseriti + 1
 
     conn.commit()
     conn.close()
 
     print("\n")
-    fine = time.time()                                                                                                           # creo il momento 1
-    print("Il job ha impiegato "  + str(round((fine-inizio),2)) + " secondi per inserire " + str(len(links)) + " annunci")       # stampo il tempo di esecuzione del job di web scraping
 
+    fine = time.time()  # creo il momento 1
+    if t_inseriti == 1:
+        x = "o"
+    else:
+        x = " "
+    print("Il job ha impiegato " + str(round((fine - inizio), 2)) + " secondi per inserire " + str(t_inseriti) + " annunci" + str(x) )  # stampo il tempo di esecuzione del job di web scraping
+    print("evvivaaaaaaaaaaaaaaaaaaaa!!!!!!!!")
 if __name__ == '__main__': main()

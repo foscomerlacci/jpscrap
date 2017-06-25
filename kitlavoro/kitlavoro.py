@@ -71,7 +71,6 @@ def main():
     conn.commit()
     conn.close()
     print("\n")
-    print("evvivaaaaaaaaaaaaaaaaaaaa!!!!!!!!")
 
 
     fine = time.time()  # creo il momento 1
@@ -80,6 +79,6 @@ def main():
     else:
         x = " "
     print("Il job ha impiegato " + str(round((fine - inizio), 2)) + " secondi per inserire " + str(t_inseriti) + " annunci" + str(x) )  # stampo il tempo di esecuzione del job di web scraping
-
+    print("evvivaaaaaaaaaaaaaaaaaaaa!!!!!!!!")
 
 if __name__ == '__main__': main()

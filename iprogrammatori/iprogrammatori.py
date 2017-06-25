@@ -59,6 +59,7 @@ def main():
 
     conn.commit()
     conn.close()
+    print("\n")
 
     fine = time.time()  # creo il momento 1
     if t_inseriti == 1:
