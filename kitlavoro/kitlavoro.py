@@ -53,8 +53,8 @@ def main():
     c.execute('''SELECT link FROM annunci;''')
     elenco = str(c.fetchall())
     t_inseriti = 0
-    if ris != 0:
-        print("ciao")
+    # if ris != 0:
+    #     print("ciao")
     for r in ris:  # qui ciclo le fette salvandole sul db e scrivendolo a schermo
 
         # print(r)
