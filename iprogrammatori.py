@@ -45,17 +45,25 @@ def main():
     c.execute('''SELECT link FROM annunci;''')
     elenco = str(c.fetchall())
     t_inseriti = 0
-    if ris == 0:
-        print("ciao")
+    # if ris == 0:
+    #     print("ciao")
     for r in ris:  # qui ciclo le fette salvandole sul db e scrivendolo a schermo
+
+        # print(r)
 
         if r[2] in elenco:                  # qui verifico che l'annuncio non sia gia' stato salvato
             print("record gia' inserito")
+            # print(type(elenco),type(r[2]))
         else:
             c.execute('''INSERT INTO annunci(data, descrizione, link, inserzionista, luogo, timestamp) VALUES(?,?,?,?,?,?)''',(r[0], r[1], r[2], r[3], r[4], str(datetime.now())))
-            print(str(r[0]) + " -- " + r[1] + " -- " + str(r[2]) + " -- " + r[3] + " -- " + r[4])
-
+            print(r[0] + " -- " + r[1] + " -- " + str(r[2]) + " -- " + r[3] + " -- " + r[4])
+            # print(r)
+            # print("evvivaaaaaaaaaaaaaaaaaaaa!!!!!!!!")
             t_inseriti = t_inseriti + 1
+            c.execute('''SELECT link FROM annunci;''')
+            elenco = str(c.fetchall())
+            # print(type(elenco), type(r[2]))
+            print(elenco)
 
     conn.commit()
     conn.close()
