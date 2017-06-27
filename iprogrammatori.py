@@ -7,6 +7,7 @@ import urllib.request
 import re
 import sqlite3
 import time
+from mail_sender import sendemail
 from datetime import date, datetime
 
 
@@ -57,6 +58,11 @@ def main():
         else:
             c.execute('''INSERT INTO annunci(data, descrizione, link, inserzionista, luogo, timestamp) VALUES(?,?,?,?,?,?)''',(r[0], r[1], r[2], r[3], r[4], str(datetime.now())))
             print(r[0] + " -- " + r[1] + " -- " + str(r[2]) + " -- " + r[3] + " -- " + r[4])
+
+
+            sendemail(message = (r[0] + " -- " + r[1] + " -- " + str(r[2]) + " -- " + r[3] + " -- " + r[4]))
+
+
             # print(r)
             # print("evvivaaaaaaaaaaaaaaaaaaaa!!!!!!!!")
             t_inseriti = t_inseriti + 1
