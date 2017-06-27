@@ -1,8 +1,12 @@
 import smtplib
 
-def sendemail(from_addr, to_addr_list, cc_addr_list,
-              subject, message,
-              login, password,
+def sendemail(from_addr,
+              to_addr_list,
+              cc_addr_list,
+              subject,
+              message,
+              login,
+              password,
               smtpserver='smtp.gmail.com', smtpport=587):  # split smtpserver and -port
     header  = 'From: %s\n' % from_addr
     header += 'To: %s\n' % ','.join(to_addr_list)
