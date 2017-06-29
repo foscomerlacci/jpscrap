@@ -7,6 +7,7 @@ import urllib.request
 import sqlite3
 import time
 from datetime import date, datetime
+from mail_sender import sendemail
 
 def main():
 
@@ -71,13 +72,14 @@ def main():
         else:
             c.execute('''INSERT INTO annunci(data, descrizione, link, inserzionista, luogo, timestamp) VALUES(?,?,?,?,?,?)''',(r[0], r[1], r[2], r[3], r[4], str(datetime.now())))
             print(r[0] + " -- " + r[1] + " -- " + str(r[2]) + " -- " + r[3] + " -- " + r[4])
+            sendemail(message=(r[0] + " -- " + r[1] + " -- " + str(r[2]) + " -- " + r[3] + " -- " + r[4]))
             # print(r)
             # print("evvivaaaaaaaaaaaaaaaaaaaa!!!!!!!!")
             t_inseriti = t_inseriti + 1
             c.execute('''SELECT link FROM annunci;''')
             elenco = str(c.fetchall())
             # print(type(elenco), type(r[2]))
-            print(elenco)
+            # print(elenco)
 
     conn.commit()
     conn.close()
