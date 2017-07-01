@@ -1,6 +1,6 @@
 #! /bin/bash
 
 # cd /home/utente/PycharmProjects/Test/jpscrap
-./subito.py
-./kitlavoro.py
-./iprogrammatori.py
+python3 subito.py
+python3 kitlavoro.py
+python3 iprogrammatori.py
