@@ -12,7 +12,6 @@ from mail_sender import sendemail
 import locale
 
 
-
 def main():
 
     links = []  # creo le liste vuote
@@ -81,7 +80,7 @@ def main():
 
 
     fine = time.time()  # creo il momento 1
-    if t_inseriti == 1:
+    if t_inseriti == 1: # determino se ci sono 1 o più annunci
         x = "o"
     else:
         x = " "

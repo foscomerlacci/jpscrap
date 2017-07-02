@@ -19,7 +19,7 @@ def sendemail(from_addr= 'alert@jpscr.ap',
     server = smtplib.SMTP(smtpserver, smtpport)  # use both smtpserver  and -port
     server.starttls()
     server.login(login,password)
-    server.sendmail(from_addr, to_addr_list, message)
+    server.sendmail(from_addr, to_addr_list, message.encode('utf-8'))
     # problems = server.sendmail(from_addr, to_addr_list, message)
     server.quit()
 
