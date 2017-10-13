@@ -1,6 +1,6 @@
 import smtplib
 
-
+# tutto questo dovrebbe essere nascosto
 def sendemail(from_addr= 'geipiscrap@gmail.com',
               to_addr_list=['pit0sf0r0w@gmail.com'],
               cc_addr_list=['bgtube@yahoo.it'],
