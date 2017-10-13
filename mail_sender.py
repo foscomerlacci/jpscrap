@@ -1,12 +1,12 @@
 import smtplib
 
 
-def sendemail(from_addr= 'alert@jpscr.ap',
+def sendemail(from_addr= 'geipiscrap@gmail.com',
               to_addr_list=['pit0sf0r0w@gmail.com'],
               cc_addr_list=['bgtube@yahoo.it'],
               subject= 'Cercasi SISTEMISTA',
               message='thtf',
-              login='pit0sf0r0w@gmail.com',
+              login='geipiscrap@gmail.com',
               password='aa718vsaa718vs',
               smtpserver='smtp.gmail.com',
               smtpport=587,):  # split smtpserver and -port
@@ -17,7 +17,9 @@ def sendemail(from_addr= 'alert@jpscr.ap',
     message = header + message
 
     server = smtplib.SMTP(smtpserver, smtpport)  # use both smtpserver  and -port
+    server.ehlo()
     server.starttls()
+    server.ehlo()
     server.login(login,password)
     server.sendmail(from_addr, to_addr_list, message.encode('utf-8'))
     # problems = server.sendmail(from_addr, to_addr_list, message)
